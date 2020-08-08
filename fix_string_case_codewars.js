@@ -10,6 +10,21 @@ solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to 
 solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
 */
 
-function solve(s){
-    //..
+const solve = (s) => {
+  let upper = 0;
+  let lower = 0;
+  for(let i = 0; i < s.length; i++) {
+    if(s[i] === s[i].toLowerCase()) {
+      lower++;
+    } else {
+      upper++;
+    }
+  }
+  if(upper > lower) {
+    return s.toUpperCase();
+  }
+  if(lower > upper) {
+    return s.toLowerCase();
+  }
+  return s.toLowerCase();
 }
